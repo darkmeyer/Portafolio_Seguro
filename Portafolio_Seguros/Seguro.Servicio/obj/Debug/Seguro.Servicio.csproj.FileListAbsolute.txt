@@ -1,0 +1,9 @@
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Seguro.Servicio.dll.config
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Seguro.Servicio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Seguro.Servicio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.csprojResolveAssemblyReference.cache
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Seguro.Negocio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Oracle.DataAccess.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Servicio\bin\Seguro.Negocio.pdb

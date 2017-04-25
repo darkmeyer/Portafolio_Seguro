@@ -1,0 +1,5 @@
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Negocio\bin\Debug\Seguro.Negocio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Negocio\bin\Debug\Seguro.Negocio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Negocio\bin\Debug\Oracle.DataAccess.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Negocio\obj\Debug\Seguro.Negocio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Seguro.Negocio\obj\Debug\Seguro.Negocio.pdb
