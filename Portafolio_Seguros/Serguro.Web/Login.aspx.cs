@@ -29,7 +29,7 @@ namespace Serguro.Web
                 e.Authenticated = true;
             }
             else
-            {
+            {                
                 e.Authenticated = false;
             }
         }
