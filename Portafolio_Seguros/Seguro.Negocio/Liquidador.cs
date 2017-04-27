@@ -13,6 +13,7 @@ namespace Seguro.Negocio
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Correo { get; set; }
+        public string Fono { get; set; }
 
         public Liquidador()
         {
@@ -28,6 +29,7 @@ namespace Seguro.Negocio
                 this.Nombres = dr.GetString(3);
                 this.Apellidos = dr.GetString(4);
                 this.Correo = dr.GetString(5);
+                this.Fono = dr.GetString(6);
 
                 CommonBC.con.Close();
                 return true;

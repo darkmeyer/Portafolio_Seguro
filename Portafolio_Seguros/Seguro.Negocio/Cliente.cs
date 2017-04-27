@@ -72,21 +72,21 @@ namespace Seguro.Negocio
 
                 Vehiculo vehiculo = new Vehiculo()
                 {
-                    Id_vehiculo = dr.GetString(8)
+                    Id_vehiculo = dr.GetString(9)
                 };
                 vehiculo.Leer();
                 this.Vehiculo = vehiculo;
 
                 Seguro seguro = new Seguro()
                 {
-                    Id_seguro = dr.GetString(9)
+                    Id_seguro = dr.GetString(10)
                 };
                 seguro.Leer();
                 this.Seguro = seguro;
 
                 Ciudad ciudad = new Ciudad()
                 {
-                    Id_ciudad = dr.GetInt32(10)
+                    Id_ciudad = dr.GetInt32(11)
                 };
 
                 ciudad.Leer();

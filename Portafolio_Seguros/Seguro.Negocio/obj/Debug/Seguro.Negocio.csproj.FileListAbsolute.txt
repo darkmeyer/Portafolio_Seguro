@@ -8,3 +8,4 @@ C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Negocio\bin\Debug\Oracle.DataAccess.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Negocio\obj\Debug\Seguro.Negocio.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Negocio\obj\Debug\Seguro.Negocio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Negocio\obj\Debug\Seguro.Negocio.csprojResolveAssemblyReference.cache

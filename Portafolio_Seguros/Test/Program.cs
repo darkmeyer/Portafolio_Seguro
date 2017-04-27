@@ -21,7 +21,7 @@ namespace Test
 
             SiniestroColeccion col = new SiniestroColeccion();
 
-            Console.WriteLine(col.LeerTodos(cli.Id_cliente).FirstOrDefault().Estado);
+            Console.WriteLine(cli.Ciudad.Nombre);
             Console.ReadLine();
         }
     }

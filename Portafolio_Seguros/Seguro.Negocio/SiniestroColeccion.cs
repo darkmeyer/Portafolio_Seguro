@@ -16,11 +16,11 @@ namespace Seguro.Negocio
 
         }
 
-        public SiniestroColeccion LeerTodos(string idCliente)
+        public List<Siniestro> LeerTodos(string idCliente)
         {
             try
             {
-                SiniestroColeccion coleccion = new SiniestroColeccion();
+                List<Siniestro> lista = new List<Siniestro>();
                 OracleConnection con;
                 string conStr = "SELECT * FROM SINIESTRO WHERE CLIENTE_id_cliente = '" + idCliente + "'";
                 con = CommonBC.Con;
@@ -37,10 +37,10 @@ namespace Seguro.Negocio
                         Id_Siniestro = dr.GetString(0)
                     };
                     siniestro.Leer();
-                    coleccion.Add(siniestro);
+                    lista.Add(siniestro);
                 }
                 CommonBC.con.Close();
-                return coleccion;
+                return lista;
             }
             catch (Exception)
             {

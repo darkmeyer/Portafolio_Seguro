@@ -24,16 +24,7 @@
         </table>
         <div>
 
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:BoundField DataField="FECHA" HeaderText="FECHA" SortExpression="FECHA" />
-                    <asp:BoundField DataField="FECHA_TERMINO" HeaderText="FECHA_TERMINO" SortExpression="FECHA_TERMINO" />
-                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" SortExpression="ESTADO" />
-                    <asp:BoundField DataField="COSTO" HeaderText="COSTO" SortExpression="COSTO" />
-                    <asp:BoundField DataField="LIQUIDADOR" HeaderText="LIQUIDADOR" ReadOnly="True" SortExpression="LIQUIDADOR" />
-                    <asp:BoundField DataField="FONO" HeaderText="FONO" SortExpression="FONO" />
-                    <asp:BoundField DataField="CORREO" HeaderText="CORREO" SortExpression="CORREO" />
-                </Columns>
+            <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
 
         </div>
