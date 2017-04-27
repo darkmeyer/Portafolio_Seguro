@@ -38,8 +38,7 @@ namespace Serguro.Web
             SiniestroColeccion col = new SiniestroColeccion();
             List<Siniestro> lista = col.LeerTodos(cliente.Id_cliente);
 
-
-            GridView1.DataSource = lista;
+            GridView1.DataSource = lista.Select(o => new { o.Fecha, o.Estado, o.Costo, o.Liquidador.Nombres, o.Liquidador.Apellidos, o.Liquidador.Correo, o.Liquidador.Fono });
             GridView1.DataBind();
         }
 
