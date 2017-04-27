@@ -34,6 +34,12 @@ namespace Serguro.Web
 
             lblNombre.Text = cliente.Nombres + " " + cliente.Apellidos;
             lblCiudad.Text = cliente.Ciudad.Nombre;
+
+            SiniestroColeccion col = new SiniestroColeccion();
+
+
+            GridView1.DataSource = col.LeerTodos(cliente.Id_cliente);
+            GridView1.DataBind();
         }
 
     }

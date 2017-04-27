@@ -7,31 +7,28 @@ using System.Threading.Tasks;
 
 namespace Seguro.Negocio
 {
-    public class Ciudad
+    public class Cobertura
     {
-        public int Id_ciudad { get; set; }
-        public string Nombre { get; set; }
-        public Region Region { get; set; }
+        public string Id_cobertura { get; set; }
+        public bool perdida_Total { get; set; }
+        public bool Dano_Terceros { get; set; }
 
-        public Ciudad()
+        public Cobertura()
         {
-
+            
         }
+
 
         public bool Leer()
         {
             try
             {
-                string cmd = "SELECT * FROM CIUDAD WHERE ID_CIUDAD = "+this.Id_ciudad;
+                string cmd = "SELECT * FROM COBERTURA WHERE ID_COBERTURA = '" + this.Id_cobertura + "'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                this.Nombre = dr.GetString(1);
 
-                Region region = new Region()
-                {
-                    Id_region = dr.GetInt32(2)
-                };
-                region.Leer();
-                this.Region = region;
+                this.perdida_Total = dr.GetString(1).Equals("t");
+                this.Dano_Terceros = dr.GetString(2).Equals("t");
+
                 CommonBC.con.Close();
                 return true;
             }

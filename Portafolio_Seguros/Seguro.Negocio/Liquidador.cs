@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Seguro.Negocio
 {
-    public class Ciudad
+    public class Liquidador
     {
-        public int Id_ciudad { get; set; }
-        public string Nombre { get; set; }
-        public Region Region { get; set; }
+        public string Id_liquidador { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
+        public string Correo { get; set; }
 
-        public Ciudad()
+        public Liquidador()
         {
 
         }
@@ -22,16 +23,12 @@ namespace Seguro.Negocio
         {
             try
             {
-                string cmd = "SELECT * FROM CIUDAD WHERE ID_CIUDAD = "+this.Id_ciudad;
+                string cmd = "SELECT * FROM LIQUIDADOR WHERE ID_LIQUIDADOR = '"+this.Id_liquidador+"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                this.Nombre = dr.GetString(1);
+                this.Nombres = dr.GetString(3);
+                this.Apellidos = dr.GetString(4);
+                this.Correo = dr.GetString(5);
 
-                Region region = new Region()
-                {
-                    Id_region = dr.GetInt32(2)
-                };
-                region.Leer();
-                this.Region = region;
                 CommonBC.con.Close();
                 return true;
             }
@@ -40,6 +37,5 @@ namespace Seguro.Negocio
                 return false;
             }
         }
-
     }
 }

@@ -7,3 +7,12 @@ C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Test\bin\Debug\Seguro.Neg
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Test\obj\Debug\Test.exe
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Test\obj\Debug\Test.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Test.exe.config
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\obj\Debug\Test.exe
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\obj\Debug\Test.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Test.exe
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Test.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Seguro.Negocio.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Oracle.DataAccess.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\bin\Debug\Seguro.Negocio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

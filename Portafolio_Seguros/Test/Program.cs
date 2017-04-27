@@ -18,7 +18,10 @@ namespace Test
             };
 
             cli.Leer();
-            Console.WriteLine(cli.validarCliente());
+
+            SiniestroColeccion col = new SiniestroColeccion();
+
+            Console.WriteLine(col.LeerTodos(cli.Id_cliente).FirstOrDefault().Estado);
             Console.ReadLine();
         }
     }

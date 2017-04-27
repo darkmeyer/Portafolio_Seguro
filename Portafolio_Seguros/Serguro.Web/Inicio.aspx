@@ -2,23 +2,40 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
     <h2>Datos Cliente:</h2>
-    <table>
-        <tr>
-            <td>Nombre:</td>
-            <td><asp:Label ID="lblNombre" runat="server"></asp:Label></td>
-        </tr>
-        <tr>
-            <td>Rut:</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>Ciudad:</td>
-            <td><asp:Label ID="lblCiudad" runat="server"></asp:Label></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+        <table>
+            <tr>
+                <td>Nombre:</td>
+                <td><asp:Label ID="lblNombre" runat="server"></asp:Label></td>
+            </tr>
+            <tr>
+                <td>Rut:</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Ciudad:</td>
+                <td><asp:Label ID="lblCiudad" runat="server"></asp:Label></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
         </table>
+        <div>
+
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="FECHA" HeaderText="FECHA" SortExpression="FECHA" />
+                    <asp:BoundField DataField="FECHA_TERMINO" HeaderText="FECHA_TERMINO" SortExpression="FECHA_TERMINO" />
+                    <asp:BoundField DataField="ESTADO" HeaderText="ESTADO" SortExpression="ESTADO" />
+                    <asp:BoundField DataField="COSTO" HeaderText="COSTO" SortExpression="COSTO" />
+                    <asp:BoundField DataField="LIQUIDADOR" HeaderText="LIQUIDADOR" ReadOnly="True" SortExpression="LIQUIDADOR" />
+                    <asp:BoundField DataField="FONO" HeaderText="FONO" SortExpression="FONO" />
+                    <asp:BoundField DataField="CORREO" HeaderText="CORREO" SortExpression="CORREO" />
+                </Columns>
+            </asp:GridView>
+
+        </div>
+    </div>
 </asp:Content>

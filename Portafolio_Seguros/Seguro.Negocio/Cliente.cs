@@ -19,8 +19,8 @@ namespace Seguro.Negocio
         public string Correo { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Direccion { get; set; }
-        public string IdVehiculo { get; set; }
-        public string IdSeguro { get; set; }
+        public Vehiculo Vehiculo { get; set; }
+        public Seguro Seguro { get; set; }
         public Ciudad Ciudad { get; set; }
 
 
@@ -35,14 +35,15 @@ namespace Seguro.Negocio
             XmlSerializer serializador = new XmlSerializer(typeof(Cliente));
             StringReader reader = new StringReader(xml);
             Cliente cliente = (Cliente)serializador.Deserialize(reader);
+            this.Id_cliente = cliente.Id_cliente;
             this.Rut = cliente.Rut;
             this.Nombres = cliente.Nombres;
             this.Apellidos = cliente.Apellidos;
             this.Correo = cliente.Correo;
             this.FechaNacimiento = cliente.FechaNacimiento;
             this.Direccion = cliente.Direccion;
-            this.IdVehiculo = cliente.IdVehiculo;
-            this.IdSeguro = cliente.IdSeguro;
+            this.Vehiculo = cliente.Vehiculo;
+            this.Seguro = cliente.Seguro;
             this.Ciudad = cliente.Ciudad;
         }
 
@@ -66,10 +67,22 @@ namespace Seguro.Negocio
                 this.Nombres = dr.GetString(3);
                 this.Apellidos = dr.GetString(4);
                 this.Correo = dr.GetString(5);
-                this.FechaNacimiento = dr.GetDateTime(6);
-                this.Direccion = dr.GetString(7);
-                this.IdVehiculo = dr.GetString(8);
-                this.IdSeguro = dr.GetString(9);
+                this.FechaNacimiento = dr.GetDateTime(7);
+                this.Direccion = dr.GetString(8);
+
+                Vehiculo vehiculo = new Vehiculo()
+                {
+                    Id_vehiculo = dr.GetString(8)
+                };
+                vehiculo.Leer();
+                this.Vehiculo = vehiculo;
+
+                Seguro seguro = new Seguro()
+                {
+                    Id_seguro = dr.GetString(9)
+                };
+                seguro.Leer();
+                this.Seguro = seguro;
 
                 Ciudad ciudad = new Ciudad()
                 {
