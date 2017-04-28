@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="centrar">
     <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
         <LayoutTemplate>
-            <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+            <table id="login2" cellpadding="1" cellspacing="0">
                 <tr>
                     <td>
                         <table cellpadding="0">
@@ -16,13 +17,13 @@
                                     <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Rut:</asp:Label>
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="UserName" runat="server" placeholder="12345678-1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="El Rut de usuario es obligatorio." ToolTip="El nombre de usuario es obligatorio." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right">
-                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Contraseña:</asp:Label>
+                                <td align="left">
+                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" Width="99px">Contraseña: </asp:Label>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
@@ -35,14 +36,16 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right" colspan="2">
+                                <td align="center" colspan="2" style="height:50px;">
                                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Inicio de sesión" ValidationGroup="Login1" />
                                 </td>
                             </tr>
                         </table>
                     </td>
-                </tr>
+                </tr>                
             </table>
+            
         </LayoutTemplate>
-    </asp:Login>
+    </asp:Login> 
+        </div>
 </asp:Content>

@@ -20,10 +20,7 @@ namespace Test
             };
 
             cli.Leer();
-
-            string xmlColeccion = seguro.leerSiniestros(cli.Id_cliente);
-            SiniestroColeccion col = new SiniestroColeccion(xmlColeccion);
-
+            
             Console.WriteLine(cli.Ciudad.Nombre);
             Console.ReadLine();
         }

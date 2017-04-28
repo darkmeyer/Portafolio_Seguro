@@ -25,7 +25,6 @@ namespace Serguro.Web
 
             if (cli.validarCliente())
             {
-                Session["rut"] = Login1.UserName;
                 e.Authenticated = true;
             }
             else

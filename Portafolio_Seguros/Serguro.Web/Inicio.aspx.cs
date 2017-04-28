@@ -12,11 +12,11 @@ namespace Serguro.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DatosCliente();
+            
         }
 
 
-        private void DatosCliente()
+        private void Dato()
         {
 
             ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();

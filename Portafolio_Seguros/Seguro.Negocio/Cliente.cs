@@ -108,8 +108,8 @@ namespace Seguro.Negocio
             try
             {
                 string cmd = "SELECT PKG_GETDATOS.F_LOGIN_CLIENTE('" + this.Rut + "'" + ",'" + this.Pass + "') from dual";
-                OracleDataReader dr = CommonBC.OracleDataReader(cmd);                
-                if (dr.GetString(0) == "T")
+                OracleDataReader dr = CommonBC.OracleDataReader(cmd);
+                if (dr.GetString(0) != null && dr.GetString(0) == "T")
                 {
                     CommonBC.con.Close();
                     return true;
