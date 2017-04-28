@@ -594,9 +594,13 @@ ul.nostyle i {
     margin-right:auto;
 }
 
+#space{
+    height:400px;
+}
+
 #centrar2
 {
-    width:40%;
+    width:65%;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -607,6 +611,11 @@ ul.nostyle i {
     margin-left:auto;
     margin-right:auto;
     
+}
+
+#cliente{
+    padding-top:100px;
+    padding-bottom:100px;
 }
 
 #meet-team .team-member .team-img {

@@ -7,7 +7,6 @@ C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Serguro.Web\bin\Seguro.Ne
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.csprojResolveAssemblyReference.cache
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.pdb
-C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\bin\Serguro.Web.dll.config
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\bin\Serguro.Web.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\bin\Serguro.Web.pdb
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\bin\Seguro.Negocio.dll
@@ -16,3 +15,4 @@ C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.csprojResolveAssemblyReference.cache
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\obj\Debug\Serguro.Web.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Serguro.Web\bin\Serguro.Web.dll.config
