@@ -140,7 +140,6 @@
     <Content Include="images\testimonial\01.jpg" />
     <Content Include="images\testimonial\bg.jpg" />
     <Content Include="images\work-process\bg.jpg" />
-    <Content Include="Inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.inview.min.js" />
@@ -184,13 +183,6 @@
     </Compile>
     <Compile Include="DatosCliente.aspx.designer.cs">
       <DependentUpon>DatosCliente.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio.aspx.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inicio.aspx.designer.cs">
-      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
