@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Serguro.Web.ServicioSeguro {
+namespace Test.ServicioSeguro {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -29,12 +29,12 @@ namespace Serguro.Web.ServicioSeguro {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServicioSeguroChannel : Serguro.Web.ServicioSeguro.IServicioSeguro, System.ServiceModel.IClientChannel {
+    public interface IServicioSeguroChannel : Test.ServicioSeguro.IServicioSeguro, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServicioSeguroClient : System.ServiceModel.ClientBase<Serguro.Web.ServicioSeguro.IServicioSeguro>, Serguro.Web.ServicioSeguro.IServicioSeguro {
+    public partial class ServicioSeguroClient : System.ServiceModel.ClientBase<Test.ServicioSeguro.IServicioSeguro>, Test.ServicioSeguro.IServicioSeguro {
         
         public ServicioSeguroClient() {
         }

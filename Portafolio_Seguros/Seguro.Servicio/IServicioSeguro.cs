@@ -14,6 +14,8 @@ namespace Seguro.Servicio
     {
         [OperationContract]
         string leerCliente(string xml);
+        [OperationContract]
+        string leerSiniestros(string idCliente);
     }
 
     

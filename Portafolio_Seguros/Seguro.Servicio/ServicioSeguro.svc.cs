@@ -19,5 +19,11 @@ namespace Seguro.Servicio
             cliente.Leer();
             return cliente.Serializar();
         }
+
+        public string leerSiniestros(string idCliente)
+        {
+            SiniestroColeccion siniestro = new SiniestroColeccion();
+            return siniestro.LeerTodos(idCliente).Serializar();
+        }
     }
 }

@@ -33,12 +33,27 @@ namespace Serguro.Web
             cliente = new Cliente(xml);
 
             lblNombre.Text = cliente.Nombres + " " + cliente.Apellidos;
+            lblRut.Text = cliente.Rut;
             lblCiudad.Text = cliente.Ciudad.Nombre;
+            lblRegion.Text = cliente.Ciudad.Region.Nombre;
+            lblVehiculo.Text = cliente.Vehiculo.Modelo.Marca.Nombre + " " + cliente.Vehiculo.Modelo.Nombre + " " + cliente.Vehiculo.Anio;
+            string perdidaTotal = cliente.Seguro.Cobertura.perdida_Total ? "Si" : "No";
+            string danioTerceros = cliente.Seguro.Cobertura.Dano_Terceros ? "Si" : "No";
+            lblSeguro.Text = string.Format("Perdida Total: {1}{0}  Daño Terceros: {2}", Environment.NewLine, perdidaTotal, danioTerceros);
 
-            SiniestroColeccion col = new SiniestroColeccion();
-            List<Siniestro> lista = col.LeerTodos(cliente.Id_cliente);
+            
 
-            GridView1.DataSource = lista.Select(o => new { o.Fecha, o.Estado, o.Costo, o.Liquidador.Nombres, o.Liquidador.Apellidos, o.Liquidador.Correo, o.Liquidador.Fono });
+            string xmlColeccion = seguro.leerSiniestros(cliente.Id_cliente);
+            SiniestroColeccion col = new SiniestroColeccion(xmlColeccion);
+
+            var siniestros =
+                (from sin in col
+                 select new {Fecha = sin.Fecha, Estado = sin.Estado, Costo = sin.Costo, 
+                            Liquidador = sin.Liquidador.Nombres + " " + sin.Liquidador.Apellidos,
+                            Correo = sin.Liquidador.Correo, Telefono = sin.Liquidador.Fono}
+                 );
+
+            GridView1.DataSource = siniestros;
             GridView1.DataBind();
         }
 

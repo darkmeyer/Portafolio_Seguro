@@ -11,6 +11,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+
+            ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();
             Cliente cli = new Cliente()
             {
                 Rut = "17256155-1",
@@ -19,7 +21,8 @@ namespace Test
 
             cli.Leer();
 
-            SiniestroColeccion col = new SiniestroColeccion();
+            string xmlColeccion = seguro.leerSiniestros(cli.Id_cliente);
+            SiniestroColeccion col = new SiniestroColeccion(xmlColeccion);
 
             Console.WriteLine(cli.Ciudad.Nombre);
             Console.ReadLine();

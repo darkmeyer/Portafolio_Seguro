@@ -22,6 +22,33 @@ namespace Serguro.Web {
         protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
+        /// Control lblVehiculo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVehiculo;
+        
+        /// <summary>
+        /// Control lblRut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRut;
+        
+        /// <summary>
+        /// Control lblSeguro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeguro;
+        
+        /// <summary>
         /// Control lblCiudad.
         /// </summary>
         /// <remarks>
@@ -29,6 +56,15 @@ namespace Serguro.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCiudad;
+        
+        /// <summary>
+        /// Control lblRegion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegion;
         
         /// <summary>
         /// Control GridView1.

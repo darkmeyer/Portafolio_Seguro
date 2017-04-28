@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Seguro.Negocio
 {
@@ -16,11 +18,35 @@ namespace Seguro.Negocio
 
         }
 
-        public List<Siniestro> LeerTodos(string idCliente)
+        public SiniestroColeccion(string xml)
+        {
+            XmlSerializer serializador = new XmlSerializer(typeof(SiniestroColeccion));
+            StringReader reader = new StringReader(xml);
+            SiniestroColeccion lista = (SiniestroColeccion)serializador.Deserialize(reader);
+            this.AddRange(lista);
+        }
+
+        public string Serializar()        
         {
             try
             {
-                List<Siniestro> lista = new List<Siniestro>();
+                XmlSerializer serializador = new XmlSerializer(typeof(SiniestroColeccion));
+                StringWriter writer = new StringWriter();
+                serializador.Serialize(writer, this);
+                writer.Close();
+                return writer.ToString();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public SiniestroColeccion LeerTodos(string idCliente)
+        {
+            try
+            {
+                SiniestroColeccion lista = new SiniestroColeccion();
                 OracleConnection con;
                 string conStr = "SELECT * FROM SINIESTRO WHERE CLIENTE_id_cliente = '" + idCliente + "'";
                 con = CommonBC.Con;
