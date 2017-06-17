@@ -10,8 +10,10 @@ namespace Seguro.Negocio
     public class Cobertura
     {
         public string Id_cobertura { get; set; }
-        public bool perdida_Total { get; set; }
-        public bool Dano_Terceros { get; set; }
+        public string Nombre { get; set; }
+        public int Deducible { get; set; }
+        public int Prima { get; set; }
+        public string Id_vehiculo { get; set; }
 
         public Cobertura()
         {
@@ -23,11 +25,14 @@ namespace Seguro.Negocio
         {
             try
             {
-                string cmd = "SELECT * FROM COBERTURA WHERE ID_COBERTURA = '" + this.Id_cobertura + "'";
+                string cmd = "SELECT * FROM COBERTURA WHERE VEHICULO_id_vehiculo = '" + this.Id_vehiculo + "'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
 
-                this.perdida_Total = dr.GetString(1).Equals("t");
-                this.Dano_Terceros = dr.GetString(2).Equals("t");
+                this.Id_cobertura = dr.GetString(0);
+                this.Nombre = dr.GetString(1);
+                this.Deducible = dr.GetInt32(2);
+                this.Prima = dr.GetInt32(3);
+
 
                 CommonBC.con.Close();
                 return true;

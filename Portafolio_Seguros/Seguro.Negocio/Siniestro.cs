@@ -13,10 +13,13 @@ namespace Seguro.Negocio
         public string Id_Siniestro { get; set; }
         public DateTime Fecha { get; set; }
         public DateTime Fecha_termino { get; set; }
+        public string Direccion { get; set; }
         public string Estado { get; set; }
-        public int Deducible { get; set; }
-        public int Costo { get; set; }
-        public Liquidador Liquidador { get; set; }
+        public string Patente { get; set; }
+        public Empleado Empleado { get; set; }
+        public Ciudad Ciudad { get; set; }
+        public Taller Taller { get; set; }
+
 
         public Siniestro()
         {
@@ -31,16 +34,28 @@ namespace Seguro.Negocio
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
                 this.Fecha = dr.GetDateTime(1);
                 this.Fecha_termino = dr.GetDateTime(2);
-                this.Estado = dr.GetString(3);
-                this.Deducible = dr.GetInt32(4);
-                this.Costo = dr.GetInt32(5);
+                this.Direccion = dr.GetString(3);
+                this.Estado = dr.GetString(4);
+                this.Patente = dr.GetString(7);
 
-                Liquidador liquidador = new Liquidador()
+                Empleado empleado = new Empleado()
                 {
-                    Id_liquidador = dr.GetString(8)
+                    Id_Empleado = dr.GetString(8)
                 };
-                liquidador.Leer();
-                this.Liquidador = liquidador;
+                empleado.Leer();
+                this.Empleado = empleado;
+                Ciudad ciudad = new Ciudad()
+                {
+                    Id_ciudad = dr.GetInt32(9)
+                };
+                ciudad.Leer();
+                this.Ciudad = ciudad;
+                Taller taller = new Taller()
+                {
+                    Id_Taller = dr.GetString(11)
+                };
+                taller.Leer();
+                this.Taller = taller;
                 CommonBC.con.Close();
                 return true;
             }

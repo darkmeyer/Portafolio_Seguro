@@ -17,10 +17,12 @@ namespace Seguro.Negocio
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Correo { get; set; }
+        public string Fono { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public bool Activo { get; set; }
         public string Direccion { get; set; }
-        public Vehiculo Vehiculo { get; set; }
-        public Seguro Seguro { get; set; }
+        public VehiculoColeccion VehiculoColeccion { get; set; }
+        public SiniestroColeccion SiniestroColeccion { get; set; }
         public Ciudad Ciudad { get; set; }
 
 
@@ -40,10 +42,12 @@ namespace Seguro.Negocio
             this.Nombres = cliente.Nombres;
             this.Apellidos = cliente.Apellidos;
             this.Correo = cliente.Correo;
+            this.Fono = cliente.Fono;
             this.FechaNacimiento = cliente.FechaNacimiento;
+            this.Activo = cliente.Activo;
             this.Direccion = cliente.Direccion;
-            this.Vehiculo = cliente.Vehiculo;
-            this.Seguro = cliente.Seguro;
+            this.VehiculoColeccion = cliente.VehiculoColeccion;
+            this.SiniestroColeccion = cliente.SiniestroColeccion;
             this.Ciudad = cliente.Ciudad;
         }
 
@@ -68,30 +72,22 @@ namespace Seguro.Negocio
                 this.Apellidos = dr.GetString(4);
                 this.Correo = dr.GetString(5);
                 this.FechaNacimiento = dr.GetDateTime(7);
-                this.Direccion = dr.GetString(8);
-
-                Vehiculo vehiculo = new Vehiculo()
-                {
-                    Id_vehiculo = dr.GetString(9)
-                };
-                vehiculo.Leer();
-                this.Vehiculo = vehiculo;
-
-                Seguro seguro = new Seguro()
-                {
-                    Id_seguro = dr.GetString(10)
-                };
-                seguro.Leer();
-                this.Seguro = seguro;
+                this.Activo = dr.GetString(8).Equals("t");
+                this.Direccion = dr.GetString(9);
 
                 Ciudad ciudad = new Ciudad()
                 {
-                    Id_ciudad = dr.GetInt32(11)
+                    Id_ciudad = dr.GetInt32(10)
                 };
 
                 ciudad.Leer();
 
                 this.Ciudad = ciudad;
+                
+                VehiculoColeccion vehiculoColeccion = new VehiculoColeccion();
+                this.VehiculoColeccion = vehiculoColeccion.LeerTodos(this.Id_cliente);
+                SiniestroColeccion siniestroColeccion = new SiniestroColeccion();
+                this.SiniestroColeccion = siniestroColeccion.LeerTodos(this.Id_cliente);
                 
                 CommonBC.con.Close();
                 return true;
@@ -107,16 +103,17 @@ namespace Seguro.Negocio
         {
             try
             {
-                string cmd = "SELECT PKG_GETDATOS.F_LOGIN_CLIENTE('" + this.Rut + "'" + ",'" + this.Pass + "') from dual";
+                string cmd = "SELECT * FROM CLIENTE WHERE RUT = '"+this.Rut+"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                if (dr.GetString(0) != null && dr.GetString(0) == "T")
+                string pass = dr.GetString(2);
+                CommonBC.con.Close();
+                if (BCrypt.Verify(this.Pass, pass))
                 {
-                    CommonBC.con.Close();
+                    this.Pass = pass;
                     return true;
                 }
                 else
                 {
-                    CommonBC.con.Close();
                     return false;
                 }
             }
