@@ -141,6 +141,7 @@
     <Content Include="images\testimonial\bg.jpg" />
     <Content Include="images\work-process\bg.jpg" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\googleApi.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.inview.min.js" />
     <Content Include="js\jquery.isotope.min.js" />
@@ -153,7 +154,6 @@
     <Content Include="js\smoothscroll.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="Login.aspx" />
-    <Content Include="css\main.less" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -161,6 +161,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\main.less" />
     <None Include="Service References\ServicioSeguro\ServicioSeguro.disco" />
     <None Include="Service References\ServicioSeguro\configuration91.svcinfo" />
     <None Include="Service References\ServicioSeguro\configuration.svcinfo" />

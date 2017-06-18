@@ -19,7 +19,7 @@ namespace Seguro.Negocio
             get
             {
                 _con = new OracleConnection();
-                _con.ConnectionString = "data source=localhost:1521/xe;password=1234;user id=DARKMEYER";
+                _con.ConnectionString = "data source=localhost:1521/xe;password=1234;user id=SEGURO";
                 return _con;
             }
         }

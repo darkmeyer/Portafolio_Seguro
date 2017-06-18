@@ -12,13 +12,25 @@ namespace Seguro.Negocio
     public class Cliente
     {
         public string Id_cliente { get; set; }
-        public string Rut { get; set; }
+        private string _rut;
+
+        public string Rut
+        {
+            get { return _rut; }
+            set 
+            { 
+                string valor = value.Replace("-","");
+                valor = valor.Replace(".", "");
+                _rut = valor; 
+            }
+        }
+
         public string Pass { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Correo { get; set; }
         public string Fono { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public string FechaNacimiento { get; set; }
         public bool Activo { get; set; }
         public string Direccion { get; set; }
         public VehiculoColeccion VehiculoColeccion { get; set; }
@@ -71,7 +83,7 @@ namespace Seguro.Negocio
                 this.Nombres = dr.GetString(3);
                 this.Apellidos = dr.GetString(4);
                 this.Correo = dr.GetString(5);
-                this.FechaNacimiento = dr.GetDateTime(7);
+                this.FechaNacimiento = dr.GetString(7);
                 this.Activo = dr.GetString(8).Equals("t");
                 this.Direccion = dr.GetString(9);
 

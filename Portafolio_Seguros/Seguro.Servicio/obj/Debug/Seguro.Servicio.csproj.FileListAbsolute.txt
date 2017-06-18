@@ -16,3 +16,5 @@ C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.csprojResolveAssemblyReference.cache
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.dll
 C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Servicio\obj\Debug\Seguro.Servicio.pdb
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Servicio\bin\BCrypt.Net.dll
+C:\Users\DarKMeYeR\Documents\GitHub\Portafolio_Seguro\Portafolio_Seguros\Seguro.Servicio\bin\BCrypt.Net.xml

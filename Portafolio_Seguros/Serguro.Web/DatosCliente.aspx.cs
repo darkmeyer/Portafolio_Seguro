@@ -1,4 +1,5 @@
-﻿using Seguro.Negocio;
+﻿
+using Seguro.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,57 +11,69 @@ namespace Serguro.Web
 {
     public partial class DatosCliente : System.Web.UI.Page
     {
+        Cliente cliente = null;        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(User.Identity.IsAuthenticated)
-                Datos();
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                    Datos();
+            }
+        }
+
+        protected void Seleccionar(object sender, GridViewSelectEventArgs e)
+        {
+            if (cliente == null)
+            {
+                cliente = (Cliente)Session.Contents["Cliente"];
+            }
+            MovimientoColeccion listaMovimientos = cliente.SiniestroColeccion[e.NewSelectedIndex].MovimientoColeccion;
+            GridView1.Visible = false;
+            GridView2.Visible = true;
+            GridView2.DataSource = listaMovimientos;
+            GridView2.DataBind();
         }
 
         private void Datos()
         {
-            
-            ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();
-
-            string rut = User.Identity.Name;
-
-            Cliente cliente = new Cliente()
+            cliente = (Cliente)Session.Contents["Cliente"];
+            if (cliente == null)
             {
-                Rut = rut
-            };
+                ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();
 
-            string xml = cliente.Serializar();
-            xml = seguro.leerCliente(xml);
-            cliente = new Cliente(xml);
+                string rut = User.Identity.Name;
 
-            lblNombre.Text = cliente.Nombres + " " + cliente.Apellidos;
-            lblRut.Text = cliente.Rut;
-            lblCiudad.Text = cliente.Ciudad.Nombre;
-            lblRegion.Text = cliente.Ciudad.Region.Nombre;
-            lblVehiculo.Text = cliente.Vehiculo.Modelo.Marca.Nombre + " " + cliente.Vehiculo.Modelo.Nombre + " " + cliente.Vehiculo.Anio;
-            string perdidaTotal = cliente.Seguro.Cobertura.perdida_Total ? "Si" : "No";
-            string danioTerceros = cliente.Seguro.Cobertura.Dano_Terceros ? "Si" : "No";
-            lblSeguro.Text = string.Format("Perdida Total: {1}{0}  Daño Terceros: {2}", Environment.NewLine, perdidaTotal, danioTerceros);
+                cliente = new Cliente()
+                {
+                    Rut = rut
+                };
 
+                string xml = cliente.Serializar();
+                xml = seguro.leerCliente(xml);
+                cliente = new Cliente(xml);
+                Session.Add("Cliente", cliente);
+            }
+                lblNombre.Text = cliente.Nombres + " " + cliente.Apellidos;
+                lblRut.Text = cliente.Rut;
+                lblCiudad.Text = cliente.Ciudad.Nombre;
+                lblRegion.Text = cliente.Ciudad.Region.Nombre;
+                lblVehiculo.Text = "";
+                lblEstado.Text = cliente.Activo ? "Activo" : "Inactivo";
+                foreach (var aux in cliente.VehiculoColeccion)
+                {
+                    lblVehiculo.Text += aux.Modelo.Marca.Nombre + " " + aux.Modelo.Nombre + " " + aux.Anio + " Patente: " + aux.Patente + " \n";
+                }
+            
 
-
-            string xmlColeccion = seguro.leerSiniestros(cliente.Id_cliente);
-            SiniestroColeccion col = new SiniestroColeccion(xmlColeccion);
-
-            var siniestros =
-                (from sin in col
-                 select new
-                 {
-                     Fecha = sin.Fecha,
-                     Estado = sin.Estado,
-                     Costo = sin.Costo,
-                     Liquidador = sin.Liquidador.Nombres + " " + sin.Liquidador.Apellidos,
-                     Correo = sin.Liquidador.Correo,
-                     Telefono = sin.Liquidador.Fono
-                 }
-                 );
-
-            GridView1.DataSource = siniestros;
+            GridView2.Visible = false;
+            GridView1.Visible = true;
+            GridView1.DataSource = cliente.SiniestroColeccion;
             GridView1.DataBind();
+        }
+
+        protected void btnVolverSiniestros_Click(object sender, EventArgs e)
+        {
+            Datos();
         }
     }
 }

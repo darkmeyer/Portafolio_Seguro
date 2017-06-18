@@ -27,12 +27,12 @@ namespace Seguro.Negocio
             {
                 string cmd = "SELECT * FROM VEHICULO WHERE ID_VEHICULO = '" + this.Id_vehiculo +"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                this.Patente = dr.GetString(1);
-                this.Anio = dr.GetInt32(2);
-                this.Valor_fiscal = dr.GetInt32(3);
+                this.Patente = dr.GetString(2);
+                this.Anio = dr.GetInt32(3);
+                this.Valor_fiscal = dr.GetInt32(4);
                 Modelo modelo = new Modelo()
                 {
-                    Id_modelo = dr.GetString(4)
+                    Id_modelo = dr.GetString(6)
                 };
                 modelo.Leer();
                 this.Modelo = modelo;

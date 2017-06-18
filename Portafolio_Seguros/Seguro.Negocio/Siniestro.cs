@@ -11,14 +11,15 @@ namespace Seguro.Negocio
     {
 
         public string Id_Siniestro { get; set; }
-        public DateTime Fecha { get; set; }
-        public DateTime Fecha_termino { get; set; }
+        public string Fecha { get; set; }
+        public string Fecha_termino { get; set; }
         public string Direccion { get; set; }
         public string Estado { get; set; }
         public string Patente { get; set; }
         public Empleado Empleado { get; set; }
         public Ciudad Ciudad { get; set; }
         public Taller Taller { get; set; }
+        public MovimientoColeccion MovimientoColeccion { get; set; }
 
 
         public Siniestro()
@@ -32,8 +33,7 @@ namespace Seguro.Negocio
             {
                 string cmd = "SELECT * FROM SINIESTRO WHERE ID_SINIESTRO = '"+this.Id_Siniestro+"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                this.Fecha = dr.GetDateTime(1);
-                this.Fecha_termino = dr.GetDateTime(2);
+                this.Fecha = dr.GetString(1);
                 this.Direccion = dr.GetString(3);
                 this.Estado = dr.GetString(4);
                 this.Patente = dr.GetString(7);
@@ -56,6 +56,9 @@ namespace Seguro.Negocio
                 };
                 taller.Leer();
                 this.Taller = taller;
+
+                MovimientoColeccion movimientoColeccion = new MovimientoColeccion();
+                this.MovimientoColeccion = movimientoColeccion.LeerTodos(this.Id_Siniestro);
                 CommonBC.con.Close();
                 return true;
             }

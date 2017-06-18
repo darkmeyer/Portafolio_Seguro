@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="centrar">
     <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
         <LayoutTemplate>
             <table id="login2" cellpadding="1" cellspacing="0">
@@ -47,5 +46,4 @@
             
         </LayoutTemplate>
     </asp:Login> 
-        </div>
 </asp:Content>
