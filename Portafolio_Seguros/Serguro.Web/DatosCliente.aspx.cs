@@ -2,7 +2,9 @@
 using Seguro.Negocio;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -30,6 +32,7 @@ namespace Serguro.Web
             MovimientoColeccion listaMovimientos = cliente.SiniestroColeccion[e.NewSelectedIndex].MovimientoColeccion;
             GridView1.Visible = false;
             GridView2.Visible = true;
+            btnVolverSiniestros.Visible = true;
             GridView2.DataSource = listaMovimientos;
             GridView2.DataBind();
         }
@@ -67,6 +70,7 @@ namespace Serguro.Web
 
             GridView2.Visible = false;
             GridView1.Visible = true;
+            btnVolverSiniestros.Visible = false;
             GridView1.DataSource = cliente.SiniestroColeccion;
             GridView1.DataBind();
         }
@@ -74,6 +78,32 @@ namespace Serguro.Web
         protected void btnVolverSiniestros_Click(object sender, EventArgs e)
         {
             Datos();
+        }
+
+        protected void btnPoliza_Click(object sender, EventArgs e)
+        {
+
+            if (cliente == null)
+                cliente = (Cliente)Session.Contents["Cliente"];
+
+            Response.Redirect("poliza.aspx");
+        }
+
+        protected void CustomersGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (cliente == null)
+                cliente = (Cliente)Session.Contents["Cliente"];
+
+            if (e.CommandName == "Presupuesto")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                Siniestro siniestro = cliente.SiniestroColeccion[index];
+                string nombrePresupuesto = "pre";
+                nombrePresupuesto += cliente.Id_cliente + "-" + siniestro.Id_Siniestro+".pdf";
+                Session.Add("nombrePresupuesto", nombrePresupuesto);
+                Response.Redirect("Presupuesto.aspx");
+            }
+
         }
     }
 }

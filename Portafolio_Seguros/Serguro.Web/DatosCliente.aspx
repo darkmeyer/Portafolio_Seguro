@@ -34,8 +34,10 @@
                     <asp:Label ID="lblEstado" runat="server" ></asp:Label>
                 </td>
                 <td>&nbsp;</td>
-                <td></td>
-                <td></td>
+                <td><strong>Poliza:</strong></td>
+                <td>
+                    <asp:Button ID="btnPoliza" runat="server" Text="Ver" OnClick="btnPoliza_Click" />
+                </td>
             </tr>
             <tr>
                 <td></td>
@@ -57,13 +59,16 @@
         <br />
         <h2>Siniestros:</h2>
         <br />
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanging="Seleccionar" CellPadding="4" ForeColor="Black" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" CssClass="mygrid">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" onrowcommand="CustomersGridView_RowCommand" OnSelectedIndexChanging="Seleccionar" CellPadding="4" ForeColor="Black" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" CssClass="mygrid">
                 <Columns>
                     <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
                     <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
                     <asp:BoundField DataField="Patente" HeaderText="Patente" SortExpression="Patente" />
-                    <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Movimientos" />
+                    <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Movimientos"/>
+                    <asp:buttonfield buttontype="Button" 
+                        commandname="Presupuesto"
+                        text="Presupuesto"/>
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

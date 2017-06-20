@@ -953,3 +953,21 @@ table
 {
     padding: 100px 0 75px;
 }
+
+.mygrid
+{
+    text-align:center;
+}
+
+.mygrid td
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+}
+
+.mygrid th
+{
+    padding: 20px;
+    text-align:center;
+}

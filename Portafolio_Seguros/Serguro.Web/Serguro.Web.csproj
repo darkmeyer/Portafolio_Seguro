@@ -169,6 +169,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Poliza.aspx" />
+    <Content Include="Presupuesto.aspx" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,6 +193,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poliza.aspx.cs">
+      <DependentUpon>Poliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poliza.aspx.designer.cs">
+      <DependentUpon>Poliza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuesto.aspx.cs">
+      <DependentUpon>Presupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presupuesto.aspx.designer.cs">
+      <DependentUpon>Presupuesto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ServicioSeguro\Reference.cs">
