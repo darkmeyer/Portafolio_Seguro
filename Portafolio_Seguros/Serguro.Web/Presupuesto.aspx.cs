@@ -25,10 +25,14 @@ namespace Serguro.Web
                     Response.AddHeader("content-length", buffer.Length.ToString());
                     Response.BinaryWrite(buffer);
                 }
+                else
+                {
+                    lblMsj.Text = "No Se a Registrado Ningun Presupuesto Aun.";
+                }
             }
             catch(Exception)
             {
-
+                lblMsj.Text = "No Se a Registrado Ningun Presupuesto Aun.";
             }
         }
     }

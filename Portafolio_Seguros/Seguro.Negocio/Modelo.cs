@@ -36,7 +36,6 @@ namespace Seguro.Negocio
                 marca.Leer();
 
                 this.Marca = marca;
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

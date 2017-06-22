@@ -27,7 +27,6 @@ namespace Seguro.Negocio
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
                 this.Fecha = dr.GetDateTime(1);
                 this.Descripcion = dr.GetString(2);
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

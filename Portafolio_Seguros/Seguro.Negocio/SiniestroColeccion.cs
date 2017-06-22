@@ -65,7 +65,6 @@ namespace Seguro.Negocio
                     siniestro.Leer();
                     lista.Add(siniestro);
                 }
-                CommonBC.con.Close();
                 return lista;
             }
             catch (Exception)

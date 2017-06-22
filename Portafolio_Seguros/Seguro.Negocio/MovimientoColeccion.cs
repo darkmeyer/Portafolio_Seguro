@@ -64,7 +64,6 @@ namespace Seguro.Negocio
                     mov.Leer();
                     lista.Add(mov);
                 }
-                CommonBC.con.Close();
                 return lista;
             }
             catch (Exception)

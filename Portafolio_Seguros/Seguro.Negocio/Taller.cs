@@ -46,7 +46,6 @@ namespace Seguro.Negocio
                 empleado.Leer();
                 this.Empleado = empleado;
 
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

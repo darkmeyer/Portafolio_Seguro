@@ -32,7 +32,6 @@ namespace Seguro.Negocio
                 };
                 region.Leer();
                 this.Region = region;
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

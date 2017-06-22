@@ -28,16 +28,18 @@ namespace Seguro.Negocio
 
         public static OracleDataReader OracleDataReader(string cmdString)
         {
-            con = CommonBC.Con;
-            con.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.CommandText = cmdString;
-            cmd.Connection = con;
-            cmd.CommandType = CommandType.Text;
+                if(con == null)
+                    con = CommonBC.Con;
+                if (con.State.ToString().Equals("Closed"))
+                    con.Open();            
+                OracleCommand cmd = new OracleCommand();
+                cmd.CommandText = cmdString;
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
 
-            OracleDataReader dr = cmd.ExecuteReader();
-            dr.Read();
-            return dr;
+                OracleDataReader dr = cmd.ExecuteReader();
+                dr.Read();
+                return dr;
         }
     }
 }

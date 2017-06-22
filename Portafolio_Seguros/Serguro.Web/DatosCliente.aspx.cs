@@ -16,11 +16,9 @@ namespace Serguro.Web
         Cliente cliente = null;        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (User.Identity.IsAuthenticated)
-                    Datos();
-            }
+            if (User.Identity.IsAuthenticated)
+                Datos();
+            
         }
 
         protected void Seleccionar(object sender, GridViewSelectEventArgs e)
@@ -39,40 +37,54 @@ namespace Serguro.Web
 
         private void Datos()
         {
-            cliente = (Cliente)Session.Contents["Cliente"];
-            if (cliente == null)
+            try
             {
-                ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();
+                lblgrid1Msj.Text = "";
+                cliente = (Cliente)Session.Contents["Cliente"];
 
-                string rut = User.Identity.Name;
-
-                cliente = new Cliente()
+                if (cliente == null)
                 {
-                    Rut = rut
-                };
+                    ServicioSeguro.ServicioSeguroClient seguro = new ServicioSeguro.ServicioSeguroClient();
 
-                string xml = cliente.Serializar();
-                xml = seguro.leerCliente(xml);
-                cliente = new Cliente(xml);
-                Session.Add("Cliente", cliente);
-            }
+                    string rut = User.Identity.Name;
+
+                    cliente = new Cliente()
+                    {
+                        Rut = rut
+                    };
+
+                    string xml = cliente.Serializar();
+                    xml = seguro.leerCliente(xml);
+                    cliente = new Cliente(xml);
+                    Session.Add("Cliente", cliente);
+                }
                 lblNombre.Text = cliente.Nombres + " " + cliente.Apellidos;
                 lblRut.Text = cliente.Rut;
                 lblCiudad.Text = cliente.Ciudad.Nombre;
                 lblRegion.Text = cliente.Ciudad.Region.Nombre;
-                lblVehiculo.Text = "";
                 lblEstado.Text = cliente.Activo ? "Activo" : "Inactivo";
-                foreach (var aux in cliente.VehiculoColeccion)
-                {
-                    lblVehiculo.Text += aux.Modelo.Marca.Nombre + " " + aux.Modelo.Nombre + " " + aux.Anio + " Patente: " + aux.Patente + " \n";
-                }
+                dataListVehiculo.DataSource = cliente.VehiculoColeccion;
+                dataListVehiculo.DataBind();
             
 
-            GridView2.Visible = false;
-            GridView1.Visible = true;
-            btnVolverSiniestros.Visible = false;
-            GridView1.DataSource = cliente.SiniestroColeccion;
-            GridView1.DataBind();
+                GridView2.Visible = false;
+                GridView1.Visible = true;
+                btnVolverSiniestros.Visible = false;
+                if (cliente.SiniestroColeccion.Count > 0)
+                {
+                    GridView1.DataSource = cliente.SiniestroColeccion;
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    lblgrid1Msj.Text = "No Se Registran Siniestros En Su Cuenta";
+                }
+            }
+            catch (Exception)
+            {
+                Session.Add("Cliente", null);
+            }
+            
         }
 
         protected void btnVolverSiniestros_Click(object sender, EventArgs e)
@@ -104,6 +116,20 @@ namespace Serguro.Web
                 Response.Redirect("Presupuesto.aspx");
             }
 
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Threading.Thread.Sleep(2000);
+                Session.Add("Cliente", null);
+                Datos();
+                lblRefresh.Text = "Ultimo Refresh: "+DateTime.Now;
+            }
+            catch (Exception)
+            {
+            }            
         }
     }
 }

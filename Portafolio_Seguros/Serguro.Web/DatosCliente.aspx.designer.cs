@@ -13,6 +13,24 @@ namespace Serguro.Web {
     public partial class DatosCliente {
         
         /// <summary>
+        /// Control lblRefresh.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRefresh;
+        
+        /// <summary>
+        /// Control btnRefresh.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRefresh;
+        
+        /// <summary>
         /// Control LoginStatus1.
         /// </summary>
         /// <remarks>
@@ -76,13 +94,22 @@ namespace Serguro.Web {
         protected global::System.Web.UI.WebControls.Button btnPoliza;
         
         /// <summary>
-        /// Control lblVehiculo.
+        /// Control dataListVehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVehiculo;
+        protected global::System.Web.UI.WebControls.DataList dataListVehiculo;
+        
+        /// <summary>
+        /// Control lblgrid1Msj.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblgrid1Msj;
         
         /// <summary>
         /// Control GridView1.
@@ -101,6 +128,15 @@ namespace Serguro.Web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnVolverSiniestros;
+        
+        /// <summary>
+        /// Control lblGrid2Msj.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGrid2Msj;
         
         /// <summary>
         /// Control GridView2.

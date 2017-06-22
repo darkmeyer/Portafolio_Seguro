@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Datos Cliente:</h2>
+        <asp:Label ID="lblRefresh" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Button ID="btnRefresh" runat="server" Text="Refrescar Datos" OnClick="btnRefresh_Click" />
         <br />
 
         <a href="#cliente"><asp:LoginStatus ID="LoginStatus1" runat="server"/></a>
@@ -48,16 +51,23 @@
             </tr>
         </table>
             </div>
-        <table>
-            <tr>
-                <td><strong>Vehiculos:&nbsp;</strong></td>
-                <td>
-                    <asp:Label ID="lblVehiculo" runat="server" ></asp:Label>
-                </td>
-            </tr>
-    </table>
+        <h3>Vehiculos:</h3><br />
+        <asp:DataList ID="dataListVehiculo" runat="server">
+        <ItemTemplate>
+            <strong>Patente:</strong>
+            <asp:Label ID="PatenteLabel" runat="server" Text='<%# Eval("Patente") %>' />
+            <strong>Anio:</strong>
+            <asp:Label ID="AnioLabel" runat="server" Text='<%# Eval("Anio") %>' />
+            <strong>Modelo:</strong>
+            <asp:Label ID="ModeloLabel" runat="server" Text='<%# Eval("Modelo.Nombre") %>' />
+            <strong>Marca:</strong>
+            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Modelo.Marca.Nombre") %>' />
+            <br />
+        </ItemTemplate>
+    </asp:DataList>        
         <br />
         <h2>Siniestros:</h2>
+        <asp:Label ID="lblgrid1Msj" runat="server"></asp:Label>
         <br />
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" onrowcommand="CustomersGridView_RowCommand" OnSelectedIndexChanging="Seleccionar" CellPadding="4" ForeColor="Black" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" CssClass="mygrid">
                 <Columns>
@@ -83,6 +93,7 @@
         <br />
         <asp:Button ID="btnVolverSiniestros" runat="server" Text="Volver" OnClick="btnVolverSiniestros_Click" />
         <br />
+        <asp:Label ID="lblGrid2Msj" runat="server"></asp:Label>
         <br />
             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="3" Enabled="False" ForeColor="Black" GridLines="Vertical" CssClass="mygrid" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px">
                 <AlternatingRowStyle BackColor="#CCCCCC" />

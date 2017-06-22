@@ -32,9 +32,6 @@ namespace Seguro.Negocio
                 this.Nombre = dr.GetString(1);
                 this.Deducible = dr.GetInt32(2);
                 this.Prima = dr.GetInt32(3);
-
-
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

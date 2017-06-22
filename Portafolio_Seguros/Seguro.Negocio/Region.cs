@@ -25,7 +25,6 @@ namespace Seguro.Negocio
                 string cmd = "SELECT * FROM REGION WHERE ID_REGION = "+this.Id_region;
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
                 this.Nombre = dr.GetString(1);
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

@@ -36,12 +36,10 @@ namespace Seguro.Negocio
                 };
                 modelo.Leer();
                 this.Modelo = modelo;
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
             }
         }

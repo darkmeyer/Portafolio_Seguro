@@ -26,7 +26,6 @@ namespace Seguro.Negocio
                 string cmd = "SELECT * FROM MARCA WHERE ID_MARCA = '" + this.Id_Marca + "'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
                 this.Nombre = dr.GetString(1);
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)

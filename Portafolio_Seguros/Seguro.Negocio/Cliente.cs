@@ -104,9 +104,8 @@ namespace Seguro.Negocio
                 CommonBC.con.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
                 return false;
             }
         }
@@ -131,8 +130,6 @@ namespace Seguro.Negocio
             }
             catch (Exception e)
             {
-                CommonBC.con.Close();
-                Console.WriteLine(e.Message);
                 return false;
             }
         }

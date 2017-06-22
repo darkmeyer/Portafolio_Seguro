@@ -59,7 +59,6 @@ namespace Seguro.Negocio
 
                 MovimientoColeccion movimientoColeccion = new MovimientoColeccion();
                 this.MovimientoColeccion = movimientoColeccion.LeerTodos(this.Id_Siniestro);
-                CommonBC.con.Close();
                 return true;
             }
             catch (Exception)
