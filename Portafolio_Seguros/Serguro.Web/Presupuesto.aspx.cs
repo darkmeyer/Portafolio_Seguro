@@ -14,7 +14,7 @@ namespace Serguro.Web
         {
             try
             {
-                string path = (@"C:\");
+                string path = (@"C:\Users\Public\");
                 path += Session.Contents["NombrePresupuesto"].ToString();
                 WebClient client = new WebClient();
                 Byte[] buffer = client.DownloadData(path);

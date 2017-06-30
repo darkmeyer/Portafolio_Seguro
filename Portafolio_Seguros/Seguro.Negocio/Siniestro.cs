@@ -11,8 +11,8 @@ namespace Seguro.Negocio
     {
 
         public string Id_Siniestro { get; set; }
-        public string Fecha { get; set; }
-        public string Fecha_termino { get; set; }
+        public DateTime Fecha { get; set; }
+        public DateTime Fecha_termino { get; set; }
         public string Direccion { get; set; }
         public string Estado { get; set; }
         public string Patente { get; set; }
@@ -33,7 +33,7 @@ namespace Seguro.Negocio
             {
                 string cmd = "SELECT * FROM SINIESTRO WHERE ID_SINIESTRO = '"+this.Id_Siniestro+"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
-                this.Fecha = dr.GetString(1);
+                this.Fecha = dr.GetDateTime(1);
                 this.Direccion = dr.GetString(3);
                 this.Estado = dr.GetString(4);
                 this.Patente = dr.GetString(7);

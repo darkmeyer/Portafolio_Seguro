@@ -75,6 +75,12 @@
                     <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
                     <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado" />
                     <asp:BoundField DataField="Patente" HeaderText="Patente" SortExpression="Patente" />
+                    <asp:TemplateField HeaderText="Liquidador">
+                        <ItemTemplate>
+                            <%# Eval("Empleado.Nombres") + " " + Eval("Empleado.Apellidos")%>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="Taller.Direccion" HeaderText="Direccion Taller" SortExpression="Taller.Direccion" />
                     <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="Movimientos"/>
                     <asp:buttonfield buttontype="Button" 
                         commandname="Presupuesto"

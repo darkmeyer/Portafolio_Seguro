@@ -12,7 +12,8 @@ namespace Serguro.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string path = (@"C:\poliza26c.pdf");
+            string path = (@"C:\Users\Public\poliza");
+            path += Session.Contents["nombrePoliza"].ToString() + ".pdf";
             WebClient client = new WebClient();
             Byte[] buffer = client.DownloadData(path);
 

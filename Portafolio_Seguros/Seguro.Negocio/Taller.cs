@@ -26,7 +26,7 @@ namespace Seguro.Negocio
         {
             try
             {
-                string cmd = "SELECT * FROM TALLER WHERE id_taller = " + this.Id_Taller;
+                string cmd = "SELECT * FROM TALLER WHERE id_taller = " + "'"+this.Id_Taller+"'";
                 OracleDataReader dr = CommonBC.OracleDataReader(cmd);
                 this.Nombre = dr.GetString(1);
                 this.Fono = dr.GetString(2);

@@ -98,6 +98,7 @@ namespace Serguro.Web
             if (cliente == null)
                 cliente = (Cliente)Session.Contents["Cliente"];
 
+            Session.Add("nombrePoliza", cliente.Id_cliente);
             Response.Redirect("poliza.aspx");
         }
 
